@@ -11,7 +11,8 @@ interface IPerson {
 }
 
 /**
- * 数据类, 直接对应数据库表
+ * Object的实现类, 直接对应数据库表, 甚至可以是Dto
+ * 显然, 实现类与对象接口不一定是一对一的关系, 可以多个接口对应一个实现类
  */
 class Person(
     override val identityCard: IdentityCard,
