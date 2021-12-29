@@ -1,7 +1,5 @@
 ## DCI建模, 解决DDD建模的缺点
 
-充血模型缺点: 上帝类, 模块耦合
-
 ### 案例
 
 以一个普通人的经典场景进行建模
@@ -36,3 +34,8 @@
   - identity_card
   - student_card
   - work_card
+
+#### DDD建模的问题
+- 上帝类: Person类包含了太多的职责, 违背了单一职责的原则, 降低维护性
+- 模块耦合: School, Company, Park, Home, 都是相互独立的, 但它们都依赖了 Person实体, 导致School可以调用Company场景中的方法, 违背了接口隔离原则
+
