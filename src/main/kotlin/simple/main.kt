@@ -1,3 +1,5 @@
+package simple
+
 /**
  * 通过kotlin代理特性实现DCI
  */
