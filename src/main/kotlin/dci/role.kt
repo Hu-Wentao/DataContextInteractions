@@ -4,9 +4,9 @@ package dci
  * 构建一个基础角色 Human
  */
 open class HumanRole(p: IPerson) : IPerson by p {
-    open fun eat() {
-        println("Human $identityCard is eating")
-        bankCard.balance--
+    open fun eat(foodPrice: Int) {
+        println("Human $identityCard is eating, cost $foodPrice yuan")
+        bankCard.balance -= foodPrice
     }
 
     open fun sleep() = println("Human $identityCard is sleeping")
@@ -27,19 +27,21 @@ class StudentRole(p: IPerson) : HumanRole(p) {
 }
 
 class WorkerRole(p: IPerson) : HumanRole(p) {
-    fun work() {
-        println("Worker $workerCard is working")
-        bankCard.balance++
+    fun work(salary: Int) {
+        println("Worker $workerCard is working, salary is $salary")
     }
 
-    fun offWork() = println("Worker $workerCard is off work")
+    fun offWork(salary: Int) {
+        println("Worker $workerCard is off work, received $salary yuan ")
+        bankCard.balance += salary
+    }
 }
 
 class TouristRole(p: IPerson) : HumanRole(p) {
-    fun buyTicket() {
-        println("Tourist is buying ticket")
-        bankCard.balance--
+    fun buyTicket(fee: Int) {
+        println("The tourist ${identityCard.name} spent $fee yuan on the tickets")
+        bankCard.balance -= fee
     }
 
-    fun enjoy() = println("Tourist  is enjoying")
+    fun visit() = println("Tourist ${identityCard.name} is enjoying")
 }

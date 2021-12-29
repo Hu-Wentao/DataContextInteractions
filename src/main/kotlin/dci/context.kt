@@ -1,7 +1,5 @@
 package dci
 
-import ddd.Person
-import ddd.WorkCard
 import kotlin.random.Random
 
 class Home {
@@ -13,7 +11,7 @@ class Home {
     }
 
     fun run() {
-        me.eat()
+        me.eat(0)
         me.play()
         me.sleep()
     }
@@ -21,6 +19,7 @@ class Home {
 
 class School(
     val name: String,
+    val foodPrice: Int = 10,
     val students: MutableList<StudentRole> = mutableListOf(),
 ) {
     fun receive(stu: StudentRole) {
@@ -35,7 +34,7 @@ class School(
         students.forEach { it.study() }
 
         println("$name start eating")
-        students.forEach { it.eat() }
+        students.forEach { it.eat(foodPrice) }
 
         println("$name start exercise")
         students.forEach { it.exam() }
@@ -44,6 +43,7 @@ class School(
 
 class Company(
     val name: String,
+    val salary: Int = 200,
     val workers: MutableList<WorkerRole> = mutableListOf(),
 ) {
     fun employ(worker: WorkerRole) {
@@ -55,19 +55,20 @@ class Company(
 
     fun run() {
         println("$name start working")
-        workers.forEach { it.work() }
+        workers.forEach { it.work(salary) }
 
         println("$name start eating")
-        workers.forEach { it.eat() }
+        workers.forEach { it.eat(0) }
 
-        println("$name start exercise")
-        workers.forEach { it.offWork() }
+        println("$name off work")
+        workers.forEach { it.offWork(salary) }
     }
 
 }
 
 class Park(
     val name: String,
+    val fee: Int = 10,
     val tourists: MutableList<TouristRole> = mutableListOf(),
 ) {
     fun welcome(tourist: TouristRole) {
@@ -76,12 +77,12 @@ class Park(
     }
 
     fun run() {
-        println("$name start sell tickets")
-        tourists.forEach { it.buyTicket() }
+        println("$name start sell tickets($fee yuan)")
+        tourists.forEach { it.buyTicket(fee) }
 
-        println("$name start enjoy")
-        tourists.forEach { it.enjoy() }
+        println("$name start visit")
+        tourists.forEach { it.visit() }
 
-        println("finish enjoy")
+        println("The $name park is closed")
     }
 }
