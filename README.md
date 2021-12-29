@@ -1,10 +1,20 @@
 ## DCI建模, 解决DDD建模的缺点
 
 DCI实现往往需要借助编程语言的特性, 例如Dart语言的Mixin, Go语言的结构体组合等, 本项目演示了利用kotlin代理特性对DCI建模的实现
+[极简示例](src/main/kotlin/simple/main.kt)
 
 ### 案例
 
-以一个普通人的经典场景进行建模 人: 身份证, 学生卡, 工卡, 银行卡 场景与行为:
+以一个普通人的经典场景进行建模
+
+人:
+
+- 身份证
+- 学生卡
+- 工卡
+- 银行卡
+
+场景与行为:
 
 - 家
     - 吃饭
@@ -21,8 +31,6 @@ DCI实现往往需要借助编程语言的特性, 例如Dart语言的Mixin, Go�
     - 购票
 
 ### 使用DDD建模
-
-[路径](src/main/kotlin/ddd)
 
 - aggregate [聚合根](src/main/kotlin/ddd/aggregate.kt)
     - company
