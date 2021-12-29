@@ -37,6 +37,8 @@ DCI实现往往需要借助编程语言的特性, 例如Dart语言的Mixin, Go�
     - student_card
     - work_card
 
+[演示](src/main/kotlin/ddd/Test.kt)
+
 #### DDD建模的问题
 
 - 上帝类: Person类包含了太多的职责, 违背了单一职责的原则, 降低维护性
@@ -80,4 +82,4 @@ DCI实现往往需要借助编程语言的特性, 例如Dart语言的Mixin, Go�
     - teacher
     - worker
 
-[演示](src/main/kotlin/dci/demo.kt)
+[演示](src/main/kotlin/dci/Test.kt)

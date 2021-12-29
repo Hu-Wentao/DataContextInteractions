@@ -3,7 +3,7 @@ package dci
 import org.junit.jupiter.api.Test
 import kotlin.random.Random
 
-internal class DciTest {
+internal class Test {
     @Test
     fun test() {
         val bob = Person.of(

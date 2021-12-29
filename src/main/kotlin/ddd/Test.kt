@@ -2,9 +2,9 @@ package ddd
 
 import org.junit.jupiter.api.Test
 
-internal class AggregateTest{
+internal class Test {
     @Test
-    fun test(){
+    fun test() {
         val bob = Person("Bob")
 
         val hfuu = School("HFUU")
